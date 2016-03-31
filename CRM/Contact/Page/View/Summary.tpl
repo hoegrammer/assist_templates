@@ -159,15 +159,23 @@
           {/if}
 
           <div class="contactTopBar contact_panel">
-            <div class="contactCardLeft">
+            {if $contact_type eq 'Individual' AND $showDemographics}
+              <div class="contactCardLeft">
+                <div class="crm-summary-demographic-block">
+                  <div class="crm-summary-block" id="demographic-block">
+                    {include file="CRM/Contact/Page/Inline/Demographics.tpl"}
+                  </div>
+                </div>
+              </div> <!-- contactCardRight -->
+            {/if}
+            <!--<div class="contactCardLeft">
               {crmRegion name="contact-basic-info-left"}
                 <div class="crm-summary-contactinfo-block">
                   <div class="crm-summary-block" id="contactinfo-block">
                     {include file="CRM/Contact/Page/Inline/ContactInfo.tpl"}
-                  </div>
-                </div>
+                  </div>                </div>
               {/crmRegion}
-            </div> <!-- end of left side -->
+            </div> --> <!-- end of left side -->
             <div class="contactCardRight">
               {crmRegion name="contact-basic-info-right"}
               {if !empty($imageURL)}
@@ -289,15 +297,6 @@
                     </div>
                   </div>
                 </div> <!-- contactCardLeft -->
-              {/if}
-              {if $contact_type eq 'Individual' AND $showDemographics}
-                <div class="contactCardRight">
-                  <div class="crm-summary-demographic-block">
-                    <div class="crm-summary-block" id="demographic-block">
-                      {include file="CRM/Contact/Page/Inline/Demographics.tpl"}
-                    </div>
-                  </div>
-                </div> <!-- contactCardRight -->
               {/if}
               <div class="clear"></div>
                 <div class="separator"></div>
