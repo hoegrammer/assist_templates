@@ -27,11 +27,8 @@
 
 <div id="crm-contact-actions-wrapper" data-edit-params='{ldelim}"cid": "{$contactId}", "class_name": "CRM_Contact_Page_Inline_Actions"{rdelim}'>
   {if $contact_type_label == 'Client'}
-    <a class='button' href='../a/#/activitycentre/{$contactId}'>
+    <a class='button' href='./civicrm/a/#/activitycentre/{$contactId}'>
       {ts}Case Work{/ts}
-    </a>
-    <a class='button' href='view/rel?cid=1361&action=add&reset=1&snippet=json'>
-      {ts}Add Relationship{/ts}
     </a>
     <!--<a class='button'>
       {ts}Support Plan{/ts}
